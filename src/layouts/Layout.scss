@@ -1,0 +1,119 @@
+/* body{
+  background: #343a40;
+} */
+
+.App {
+  text-align: center;
+}
+
+.main-panel {
+  position: relative;
+  float: right;
+  width: 100%;
+  min-height: 100vh;
+  /* border-top: 2px solid #e14eca; */
+  /* background: -webkit-gradient(linear,left top,left bottom,from(#1e1e2f),to(#1e1e24)); */
+  /* background: linear-gradient(#1e1e2f,#1e1e24); */
+  -webkit-transition: all .5s cubic-bezier(.685,.0473,.346,1);
+  transition: all .5s cubic-bezier(.685,.0473,.346,1);
+}
+
+.main-content{
+  /* padding: 73px 30px 30px 130px; */
+  /* padding: 80px 30px 30px 280px; */
+  /* padding: 70px 10px 30px 255px; */
+  // margin: 70px 10px 0px 255px;
+  margin:63px 0px 0px 236px;
+  min-height: calc(100vh - 106px);
+  background: #fff;
+}
+
+footer{
+  margin: 0px 0px 0px 236px;
+  background: #fff;
+}
+
+.pro-email-chart{
+  background: #fafbfd;
+}
+
+
+.sidebar-mini .sidebar {
+  width:80px;
+}
+
+.sidebar-mini .main-content{
+  margin: 63px 0px 0px 86px;
+}
+
+.sidebar-mini footer{
+  margin: 0px 0px 0px 86px;
+}
+
+.sidebar-mini .nav p{
+  display: none;
+}
+
+.navbar-brand {
+  margin-left: .6rem;
+}
+
+.navbar-brand img{
+  margin-right: .5rem;
+}
+
+@media (max-width: 991px){
+
+  .main-content{
+    margin: 63px 0px 0px 0px
+  }
+
+  footer{
+    margin: 0px 0px 0px 0px;
+  }
+
+  .sidebar-mini .main-content{
+    margin: 63px -9px 0px 0px;
+  }
+
+  .sidebar-mini footer{
+    margin: 0px -9px 0px 0px;
+  }
+
+  .nav-open .main-content{
+    left: 0;
+    transform: translate3d(-260px, 0, 0);
+  }
+
+  .nav-open footer{
+    left: 0;
+    transform: translate3d(-260px, 0, 0);
+  }
+
+  .nav-open.sidebar-mini .main-content{
+    left: 0;
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  .nav-open.sidebar-mini footer{
+    left: 0;
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  #bodyClick {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: auto;
+    right: 260px;
+    content: "";
+    z-index: 9999;
+    overflow-x: hidden;
+  }
+
+  .nav-open.sidebar-mini #bodyClick {
+    right: 80px;
+  }
+}

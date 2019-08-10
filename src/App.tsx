@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.scss';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
+// import Example from './components/Charts/Example';
+import Footer from './components/Footer/Footer';
+import sidebarRoutes from './routes';
+
+let getRoutes = (routes:any) => {
+  return routes.map((prop:any, key:any) => {
+    if (prop.layout === "/admin") {
+      return (
+        <Route
+          path={prop.layout + prop.path}
+          render={props => (
+            <prop.component/>
+          )}
+          key={key}
+        />
+      );
+    } else {
+      return null;
+    }
+  });
+};
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar routes={sidebarRoutes}></Sidebar>
+      <div id="main-panel" className="main-panel">
+        <Header></Header>
+        <div className="main-content">
+          <BrowserRouter>
+            <Switch>{getRoutes(sidebarRoutes)}</Switch>
+          </BrowserRouter>
+        </div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }
+
+
 
 export default App;
