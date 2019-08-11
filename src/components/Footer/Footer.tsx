@@ -11,7 +11,7 @@ class Footer extends React.Component<FooterProps, FooterState> {
     state = { }
     render() { 
         return ( <footer className="footer">
-          <nav className="pull-left">
+          <nav className="pull-left mt-3">
             <ul>
               <li>
                 <a href="#pablo">Home</a>

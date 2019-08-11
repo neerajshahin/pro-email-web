@@ -43,7 +43,7 @@ class Layout extends React.Component<LayoutProps, LauoutState> {
     <Sidebar {...this.props} routes={sidebarRoutes}></Sidebar>
     <div id="main-panel" className="main-panel">
       <Header></Header>
-      <div className="main-content">
+      <div className="main-content pt-3">
           <Switch>{this.getRoutes(sidebarRoutes)}</Switch>
       </div>
       <Footer></Footer>
